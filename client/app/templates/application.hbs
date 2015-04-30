@@ -1,6 +1,12 @@
-<h2 id="title">Welcome to Ember.js</h2>
+{{#md-navbar name="Lint Roller"}}
+  <li>{{#link-to 'linters'}}Linters{{/link-to}}</li>
+{{/md-navbar}}
 
-{{outlet}}
+<div class="content">
+
+  {{outlet}}
+
+</div>
 
 {{!-- ember-cli-materialize modal container --}}
 {{md-modal-container}}

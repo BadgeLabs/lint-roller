@@ -7,9 +7,8 @@ var Router = Ember.Router.extend({
 
 export default Router.map(function() {
   this.resource('rules', function() {});
-  this.resource('linter', function() {});
-
-  this.route('linters', function() {
+  this.resource('linters', function() {
     this.route('new');
   });
+
 });
