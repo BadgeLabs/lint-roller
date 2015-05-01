@@ -1,1 +1,5 @@
 {{md-btn icon='mdi-content-add' action='gotoNewLinter' buttonType='floating'}}
+
+{{#each model as |linter|}}
+  <li>{{linter.name}}</li>
+{{/each}}
