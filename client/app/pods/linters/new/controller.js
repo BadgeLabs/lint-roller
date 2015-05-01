@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       var self = this;
       this.get('model').save().then(function gotoLinters(){
         self.transitionToRoute('linters');
-      })
+      });
     }
   }
 });

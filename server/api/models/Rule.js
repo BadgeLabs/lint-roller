@@ -13,7 +13,7 @@ module.exports = {
     description : { type: 'string' },
 
     // References
-    linter: { model: 'linter' }
+    linter: { model: 'linter' },
   }
 };
 
