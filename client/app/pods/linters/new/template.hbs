@@ -1,5 +1,7 @@
 <form {{action "save" on="submit"}}>
 
-  {{md-input label="Linter Name"}}
+  {{md-input label="Linter Name" value=model.name}}
+
+  {{md-btn-submit icon='mdi-content-send' iconPosition='right' text='Submit'}}
 
 </form>
