@@ -13,6 +13,7 @@
     "qunit": "~1.17.1",
     "ember-mocha": "~0.6.2",
     "materialize": "~0.96.0",
-    "pure": "~0.6.0"
+    "pure": "~0.6.0",
+    "plupload": "2.1.2"
   }
 }

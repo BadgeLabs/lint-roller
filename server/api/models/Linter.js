@@ -10,14 +10,13 @@ module.exports = {
   attributes: {
 
     name : { type: 'string' },
+    logoUrl: { type: 'string' },
 
     // References
     rules: {
       collection: 'rule',
       via: 'linter'
     },
-    logo: { model: 'logo' },
-
   }
 };
 

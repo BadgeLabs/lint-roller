@@ -48,8 +48,8 @@ module.exports = function(environment) {
     'default-src': "'none' 'unsafe-inline'",
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline'",
     'style-src': "'self' 'unsafe-inline'",
-    'connect-src': "'self' ",
-    'img-src': "'self'",
+    'connect-src': "*",
+    'img-src': "*",
     'media-src': "'self'"
   };
 

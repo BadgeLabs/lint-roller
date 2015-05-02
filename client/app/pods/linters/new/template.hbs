@@ -2,6 +2,31 @@
 
   {{md-input label="Linter Name" value=model.name}}
 
+
+
   {{md-btn-submit icon='mdi-content-send' iconPosition='right' text='Submit'}}
+
+  {{#pl-uploader extensions="jpg jpeg png gif" action="http://localhost:1337/api/v1/logos/upload" for="upload-logo" when-queued="queueLogo" as |queue features|}}
+    <div class="dropzone" id={{features.drag-and-drop.dropzone-id}}>
+      {{#if features.drag-and-drop.drag-data}}
+        {{#if features.drag-and-drop.drag-data.valid}}
+          Drop to upload
+        {{else}}
+          Invalid
+        {{/if}}
+      {{else if queue.length}}
+        A file has been selected for upload.
+      {{else}}
+        <h4>Upload Images</h4>
+        <p>
+          {{#if features.drag-and-drop}}
+            Drag and drop images onto this area to upload them or
+          {{/if}}
+          <a id="upload-logo">upload a logo.</a>
+        </p>
+      {{/if}}
+    </div>
+
+  {{/pl-uploader}}
 
 </form>

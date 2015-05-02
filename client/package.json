@@ -38,6 +38,7 @@
     "ember-key-responder": "0.2.1",
     "ember-modal-dialog": "0.3.0",
     "ember-new-computed": "1.0.0",
+    "ember-plupload": "0.4.6",
     "ember-radio-button": "1.0.4"
   }
 }
