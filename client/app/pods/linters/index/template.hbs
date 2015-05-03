@@ -1,5 +1,7 @@
-{{md-btn icon='mdi-content-add' action='gotoNewLinter' buttonType='floating'}}
+<ul>
+  {{#each model as |linter|}}
+    <li><img src={{linter.logoRealUrl}} class='img__linterlogo'> <span class='txt__list--big'>{{linter.name}}</span> </li>
+  {{/each}}
+</ul>
 
-{{#each model as |linter|}}
-  <img src={{linter.logoRealUrl}}> {{linter.name}}
-{{/each}}
+{{md-btn icon='mdi-content-add' action='gotoNewLinter' buttonType='floating'}}
