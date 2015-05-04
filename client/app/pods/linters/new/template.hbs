@@ -2,31 +2,32 @@
 
   {{md-input label="Linter Name" value=model.name}}
 
-
-
-  {{md-btn-submit icon='mdi-content-send' iconPosition='right' text='Submit'}}
-
   {{#pl-uploader extensions="jpg jpeg png gif" action="http://localhost:1337/api/v1/logos/upload" for="upload-logo" when-queued="queueLogo" as |queue features|}}
-    <div class="dropzone" id={{features.drag-and-drop.dropzone-id}}>
-      {{#if features.drag-and-drop.drag-data}}
-        {{#if features.drag-and-drop.drag-data.valid}}
-          Drop to upload
+    {{#if features.drag-and-drop}}
+      <div class="dropzone" id={{features.drag-and-drop.dropzone-id}}>
+        {{#if features.drag-and-drop.drag-data}}
+          {{#unless features.drag-and-drop.drag-data.valid}}
+            Invalid File
+          {{/unless}}
+        {{else if queue.length}}
+          {{#each events as |event|}}
+            <img src={{event.preview}} style="max-width: 100%; max-height: 100%">
+          {{/each}}
         {{else}}
-          Invalid
+          <a id="upload-logo" class='dropzone__link'>Add Logo</a>
         {{/if}}
-      {{else if queue.length}}
-        A file has been selected for upload.
-      {{else}}
-        <h4>Upload Images</h4>
-        <p>
-          {{#if features.drag-and-drop}}
-            Drag and drop images onto this area to upload them or
-          {{/if}}
-          <a id="upload-logo">upload a logo.</a>
-        </p>
+      </div>
+    {{else}}
+      {{md-btn text='Logo' id="upload-logo" icon='mdi-file-file-upload' iconPosition='right'}}
+      {{#if queue.length}}
+        {{#each events as |event|}}
+          <div><img src={{event.preview}} style="max-width: 100px; max-height: 100px"></div>
+          <div><span>{{event.filename}}</span></div>
+        {{/each}}
       {{/if}}
-    </div>
+    {{/if}}
 
   {{/pl-uploader}}
 
+  {{md-btn-submit text='Submit' icon='mdi-content-send' iconPosition='right'}}
 </form>

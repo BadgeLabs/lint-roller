@@ -14,6 +14,22 @@
   font-size: 2em;
 }
 
+.dropzone {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  border: 8px dotted #888;
+  border-radius: 20px;
+  color: #888;
+  font: bold 24px/100px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 30px;
+}
+
+.dropzone__link {
+  cursor: pointer;
+}
 
 /* FIXME: Workaround for https://github.com/Dogfalo/materialize/issues/1079 */
 @each $mdi-icon-name, $mdi-icon-value in $mdi-list-icons {
